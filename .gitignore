@@ -1,0 +1,12 @@
+# created by virtualenv automatically
+credentials.json
+multi.py
+shuffle-features.py
+
+# build files
+ListingsPreprocessor.egg-info
+build
+.vscode
+
+# Modified Listings Pictures
+Listings_Pictures/mods
