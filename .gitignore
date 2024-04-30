@@ -11,3 +11,11 @@ build
 # Modified Listings Pictures
 Listings_Pictures/mods
 Listings_Pictures/old
+
+# pycache
+__pycache__
+ListingsPreprocessor/__pycache__
+*__pycache__*
+
+# LIstings CSV
+NPC_Listings*
