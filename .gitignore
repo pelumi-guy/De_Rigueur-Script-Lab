@@ -16,7 +16,7 @@ Listings_Pictures/old
 __pycache__
 ListingsPreprocessor/__pycache__
 ListingsPreprocessor/engine/__pycache__
-*__pycache__*
+/__pycache__
 
 # LIstings CSV
 NPC_Listings*
