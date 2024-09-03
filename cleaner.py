@@ -17,6 +17,7 @@ def Run():
 
     # Find elements that are in one set but not in the other
     old_listings = list(set1.symmetric_difference(set2))
+    unused_dirs = ", ".join(old_listings)
 
 
     # print("All listings:", all_listings)
@@ -27,6 +28,9 @@ def Run():
         dir_name = os.path.join(input_dir, directory)
         shutil.move(dir_name, target)
 
+    print("Unused listing pictures folders found:", unused_dirs)
+
+
 if __name__ == "__main__":
     Run()
-    print("Unused listings pictures have been cleaned successfully.")
+    print("All unused listing pictures folders have been cleaned successfully.")
