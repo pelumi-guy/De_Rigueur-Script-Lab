@@ -20,8 +20,8 @@ def get_listings():
 
 
 def shuffle_features(body):
-    for row in body:
-        description = row[19]
+    for col in body:
+        description = col[19]
 
         # Define a regular expression pattern to match the features section
         pattern = r'(Features:)(.*?)(Price:)'
@@ -46,7 +46,21 @@ def shuffle_features(body):
         # Replace the original features section with the shuffled features section in the full string
         shuffled_description = description.replace(features_str, shuffled_features_str)
 
-        row[19] = shuffled_description
+        col[19] = shuffled_description
+
+def extract_active_listings():
+    data = get_listings()
+
+    headers = data[0]
+    body = data[1:]
+
+    active_listings = []
+
+    for col in body:
+        listing_pictures_dir = col[20]
+        active_listings.append(listing_pictures_dir)
+
+    return active_listings
 
 
 def run():
