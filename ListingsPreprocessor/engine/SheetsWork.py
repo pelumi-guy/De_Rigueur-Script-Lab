@@ -62,6 +62,28 @@ def extract_active_listings():
 
     return active_listings
 
+def adjustPrices(body):
+    for col in body:
+        price = int(col[10])
+
+        if price < 1_000_000_000:
+            adjustment = round((random.randint(-2, 2) * random.random()), 3)
+
+            mil_price = price / 1_000_000
+            new_mil_price = mil_price + adjustment
+
+            new_price = int(new_mil_price * 1_000_000)
+        else:
+            adjustment = round((random.randint(-2, 2) * random.random()), 6)
+
+            bil_price = price / 1_000_000_000
+            new_bil_price = bil_price + adjustment
+
+            new_price = int(new_bil_price * 1_000_000_000)
+
+        col[10] = new_price
+
+
 
 def run():
     data = get_listings()
@@ -70,6 +92,7 @@ def run():
     body = data[1:]
 
     shuffle_features(body)
+    adjustPrices(body)
 
     random.shuffle(body)
 
