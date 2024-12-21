@@ -91,7 +91,7 @@ def run():
     headers = data[0]
     body = data[1:]
 
-    shuffle_features(body)
+    # shuffle_features(body)
     # adjustPrices(body)
 
     random.shuffle(body)
